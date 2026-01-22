@@ -1,5 +1,5 @@
 # info340project
-###Minecraft Interactive Website App Description: 
+### Minecraft Interactive Website App Description: 
 
 
 The primary users of this website are Minecraft players of any skill levels. This includes anyone from beginners who want to learn about the game’s diverse biomes to experienced players who want a quick reference while playing. This will most likely include a significant population of younger users (ages 8-18) who make up a large portion of Minecraft’s users, as well as adult players and gamers. Given Minecraft’s global reach, users will come from diverse many different backgrounds. To ensure accessibility for users with visual impairments or color blindness, the app will include alt text for images, sufficient color contrast. The app will also use clear and simple language to be accessible to younger users and non-native English speakers from across the globe.
