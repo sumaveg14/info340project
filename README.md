@@ -13,3 +13,5 @@ Users will have access to comprehensive information about Minecraft’s many bio
 
 
 This app addresses the information overload Minecraft players face. The game has over 60 biomes across three dimensions, each with unique resources and structures. Wikis do exist, but they’re very densely filled with text and hard to navigate quickly while actively playing. They’re also not conducive to exploration, but are rather a place to search for information. This Pokédex style interface provides a visual and interactive way to explore and track biome information, making it easier for players to explore resources and plan more efficiently. It will also lower the barrier to entry for new players while still providing a new resource for experienced players.
+
+In this proposal, there is a sample CSS and HTML document where the HTML document has a very basic web page that is supposed to show the skeleton on what the actual web page looks like. The CSS file is extremely basic and has two sections, one for the body and one for the section.

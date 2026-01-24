@@ -10,3 +10,8 @@ section {
   margin: 20px auto;
   max-width: 900px;
 }
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
