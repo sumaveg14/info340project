@@ -219,15 +219,51 @@ body {
   .mob-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .search-filter-form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .achievement-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favorite-card {
+    flex-direction: row;
+  }
+
+  .favorite-image {
+    width: 150px;
+    height: 100px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 1100px) {
   .mob-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .favorites-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* Visually hidden (for accessible labels) */
+/* =====================================================
+   RACHEL'S CSS ADDITIONS - Add these to the shared style.css
+   ===================================================== */
+
+/* Visually hidden for accessibility */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -240,81 +276,65 @@ body {
   border: 0;
 }
 
-/* Main Navigation */
-.main-nav {
+/* Simple Navigation Bar */
+.navbar {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 0.8rem;
+  background: linear-gradient(135deg, #5aa85a, #3f7f3f);
+  padding: 1rem;
 }
 
-.main-nav a {
+.navbar a {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   background: rgba(255,255,255,0.15);
   font-weight: 600;
-  transition: background 0.2s ease;
 }
 
-.main-nav a:hover,
-.main-nav a:focus {
+.navbar a:hover,
+.navbar a:focus {
   background: rgba(255,255,255,0.3);
 }
 
-.main-nav a[aria-current="page"] {
+.navbar a[aria-current="page"] {
   background: rgba(0,0,0,0.25);
 }
 
-/* Search Form Layout */
+/* Page Header */
+.page-header {
+  background: #3b3b3b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Search Form */
 .search-filter-form {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.search-wrapper {
-  width: 100%;
+/* Content Sections */
+.content-section {
+  margin-bottom: 2.5rem;
 }
 
-/* Tab Navigation */
-.tab-nav {
-  display: flex;
-  gap: 0.25rem;
-  margin-bottom: 1.5rem;
+.content-section h2 {
+  color: #3f7f3f;
   border-bottom: 3px solid #7b5b3a;
-  flex-wrap: wrap;
-}
-
-.tab-btn {
-  background: #d6c4a3;
-  border: 2px solid #7b5b3a;
-  border-bottom: none;
-  border-radius: 8px 8px 0 0;
-  padding: 0.75rem 1.25rem;
-  font-weight: bold;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: #5a4a3a;
-  transition: background 0.2s ease;
-}
-
-.tab-btn:hover,
-.tab-btn:focus {
-  background: #c4b08a;
-}
-
-.tab-btn.active {
-  background: #5aa85a;
-  color: white;
-  border-color: #3f7f3f;
-}
-
-/* Tab Content */
-.tab-content[hidden] {
-  display: none;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-description {
@@ -322,7 +342,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Achievement Grid & Cards */
+/* Achievement Grid */
 .achievement-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -386,15 +406,8 @@ body {
   margin: 0.3rem 0;
 }
 
-.achievement-links {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-/* Difficulty & Dimension Badges */
-.difficulty-badge,
-.dimension-badge {
+/* Difficulty Badges */
+.difficulty-badge {
   display: inline-block;
   padding: 0.25rem 0.6rem;
   border-radius: 4px;
@@ -406,6 +419,16 @@ body {
 .difficulty-badge.easy { background: #4caf50; color: white; }
 .difficulty-badge.medium { background: #ff9800; color: white; }
 .difficulty-badge.hard { background: #f44336; color: white; }
+
+/* Dimension Badges */
+.dimension-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 .dimension-badge.overworld { background: #8bc34a; color: white; }
 .dimension-badge.nether { background: #e91e63; color: white; }
@@ -421,7 +444,6 @@ body {
   border-radius: 5px;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: background 0.2s ease;
 }
 
 .link-btn:hover,
@@ -429,12 +451,7 @@ body {
   background: #3f7f3f;
 }
 
-.link-btn.primary {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-}
-
-/* Favorites Grid & Cards */
+/* Favorites Grid */
 .favorites-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -485,21 +502,7 @@ body {
   margin: 0.5rem 0;
 }
 
-.empty-favorites-hint {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 2rem;
-  background: #f9f6f0;
-  border-radius: 12px;
-  border: 2px dashed #d6c4a3;
-}
-
-.empty-favorites-hint p {
-  margin-bottom: 1rem;
-  color: #666;
-}
-
-/* Favorited State */
+/* Favorited state (gold star) */
 .favorite-btn.favorited {
   color: #ffc107;
 }
@@ -513,7 +516,7 @@ body {
   text-align: center;
 }
 
-.footer-content p {
+.site-footer p {
   margin: 0.3rem 0;
   font-size: 0.85rem;
 }
