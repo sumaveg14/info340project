@@ -1,37 +1,88 @@
-/* Basic page setup */
+/* ===== Base Styles ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #00bcd4;
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  background: #efe9dd; /* prioritizing the second file's background */
+  color: #2a2a2a;
 }
 
-/* Header bar */
-.top-bar {
-  background: #0a7a2f;
-  color: white;
-  padding: 20px;
-  font-size: 20px;
-}
-
-/* Page spacing */
+.container,
 .page {
-  padding: 30px;
+  padding: 1rem;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* Search bar */
-.search-section {
-  margin-bottom: 25px;
+/* ===== Header ===== */
+.top-bar,
+.app-header {
+  color: white;
+  text-align: center;
+  padding: 1.6rem 20px;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2);
+  background: linear-gradient(#5aa85a, #3f7f3f); /* from second file */
+  font-size: 1.25rem;
 }
 
-.search-bar {
+.app-title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.app-subtitle {
+  margin-top: 0.3rem;
+  opacity: 0.9;
+}
+
+/* ===== Search & Controls ===== */
+.search-section,
+.controls {
+  margin-bottom: 1.5rem;
+}
+
+.search-bar,
+.search-input {
   width: 100%;
-  padding: 15px;
-  font-size: 18px;
-  border: 3px solid black;
+  padding: 0.75rem 15px;
+  font-size: 1rem;
   border-radius: 6px;
+  border: 2px solid #7b5b3a;
 }
 
-/* Filters box */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filters,
+.filters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.filter-group h3 {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin: 6px 0;
+}
+
+.filter-btn,
+.filter-select,
+.filters-box {
+  border-radius: 10px;
+  border: 2px solid #7b5b3a;
+  background: #d6c4a3;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+}
+
 .filters-box {
   background: #3b3b3b;
   color: white;
@@ -44,23 +95,7 @@ body {
   margin-top: 0;
 }
 
-/* Filters layout */
-.filters-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.filter-group h3 {
-  margin-bottom: 10px;
-}
-
-.filter-group label {
-  display: block;
-  margin: 6px 0;
-}
-
-/* Biome card layout */
+/* ===== Biome Grid & Cards ===== */
 .biome-grid {
   display: flex;
   gap: 25px;
@@ -76,60 +111,118 @@ body {
   border: 3px solid black;
 }
 
-/* Biome image placeholder */
 .biome-image {
   font-size: 50px;
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* Tags */
-.tags {
-  margin-top: 10px;
+/* ===== Mob Grid & Cards ===== */
+.mob-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
+.mob-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  border: 3px solid #9b9b9b;
+}
+
+.mob-icon {
+  font-size: 2.2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f3f3f3;
+  border: 2px solid #888;
+}
+
+.mob-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.mob-type {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.hostile { color: #c62828; }
+.neutral { color: #6a1b9a; }
+.passive { color: #2e7d32; }
+
+.mob-tags {
+  margin-top: 0.4rem;
+}
+
+/* ===== Tags (Biome + Mob) ===== */
 .tag {
   display: inline-block;
-  padding: 5px 10px;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 4px 4px 0 0;
+  padding: 0.2rem 0.6rem;
   border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin: 0.3rem 0.3rem 0 0;
+  border: 1px solid #4caf50;
 }
 
-/* Tag colors */
-.overworld {
-  background: green;
+/* Biome-specific tags */
+.overworld { background: green; }
+.temperate { background: orange; }
+.cold { background: blue; }
+.easy { background: limegreen; }
+.medium { background: gold; }
+.hard { background: red; }
+
+/* Achievement */
+.mob-achievement {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
 }
 
-.temperate {
-  background: orange;
+/* Favorite Buttons */
+.favorite,
+.favorite-btn {
+  position: relative;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.cold {
-  background: blue;
-}
-
-.easy {
-  background: limegreen;
-}
-
-.medium {
-  background: gold;
-}
-
-.hard {
-  background: red;
-}
-
-/* Favorite button */
 .favorite {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: none;
-  border: none;
-  font-size: 22px;
   color: gold;
-  cursor: pointer;
+}
+
+/* ===== Responsive Layout ===== */
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .mob-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .mob-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
